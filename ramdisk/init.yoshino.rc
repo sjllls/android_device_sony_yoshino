@@ -289,6 +289,11 @@ on property:wlan.driver.status=ok
     chown wifi wifi /sys/module/wlan/parameters/fwpath
     restorecon /sys/module/wlan/parameters/fwpath
 
+# Run the oem-overlay script once taimport is finished.
+# This ensures ro.semc.version.cust.active has been set.
+on property:init.taimport.ready=true
+    exec u:r:qti_init_shell:s0 -- /vendor/bin/init.sony.oem-overlay.sh
+
 service wpa_supplicant /system/vendor/bin/hw/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/vendor/etc/wifi/wpa_supplicant_overlay.conf \

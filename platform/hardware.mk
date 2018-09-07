@@ -30,4 +30,5 @@ PRODUCT_PACKAGES += \
 
 # MODEM
 PRODUCT_PACKAGES += \
-    init.sony.modem.sh
+    init.sony.modem.sh \
+    init.sony.oem-overlay.sh
