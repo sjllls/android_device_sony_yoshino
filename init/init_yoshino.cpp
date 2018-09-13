@@ -45,6 +45,11 @@ using android::base::WaitForProperty;
 using android::init::ReadFile;
 using android::init::property_set;
 
+__attribute__ ((weak))
+void target_load_properties()
+{
+}
+
 static void load_properties_from_file(const char *, const char *);
 
 static void load_properties(char *data, const char *filter)
@@ -105,6 +110,8 @@ static void load_properties_from_file(const char* filename, const char* filter) 
 }
 
 void vendor_load_properties() {
+
+    target_load_properties();
 
     // Wait for up to 2 seconds for /oem to be ready before we proceed (it should take much less...)
     WaitForProperty("ro.boot.oem.ready", "true", 2s);
