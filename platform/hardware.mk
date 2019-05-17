@@ -31,3 +31,7 @@ PRODUCT_PACKAGES += \
 # MODEM
 PRODUCT_PACKAGES += \
     init.sony.modem.sh
+
+# EAS PowerHAL
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.1-service.wahoo

@@ -38,6 +38,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a73
 TARGET_USES_64_BIT_BINDER := true
 
 ENABLE_CPUSETS := true
+WITH_VERITY := false
 
 ### KERNEL
 TARGET_KERNEL_VERSION := 4.4
@@ -51,8 +52,6 @@ BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1
 BOARD_KERNEL_CMDLINE += user_debug=31
 BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x37
 BOARD_KERNEL_CMDLINE += ehci-hcd.park=3
-BOARD_KERNEL_CMDLINE += sched_enable_hmp=1
-BOARD_KERNEL_CMDLINE += sched_enable_power_aware=1
 BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += zram.backend=z3fold
 BOARD_KERNEL_CMDLINE += buildvariant=userdebug
